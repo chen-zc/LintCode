@@ -26,7 +26,7 @@ public class LFU Cache {
 		}
 		if (values.size() >= CAP) {
 			int lowkey = frequency.get(minFreq).get(0);
-			frequency.get(minFreq).remove(Integer.valueOf(lowkey));
+			frequency.get(minFreq).remove(Integer.valueOf(lowkey)); // Integer.valueOf(lowkey) is to remove the Object with value of lowkey, not index
 			values.remove(lowkey);
 		}
 		values.put(key, value);
